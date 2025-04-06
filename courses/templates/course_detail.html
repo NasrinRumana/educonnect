@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course.title }} | EduConnect</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Adjust the path as per your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>{{ course.title }}</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a> |
+            <a href="{% url 'courses' %}">Back to Courses</a>
+        </nav>
+
+        <section>
+            <h2>Description</h2>
+            <p>{{ course.description }}</p>
+        </section>
+
+        <footer>
+            <p>Created on: {{ course.created_at|date:"F d, Y" }}</p>
+        </footer>
+    </div>
+</body>
+</html>

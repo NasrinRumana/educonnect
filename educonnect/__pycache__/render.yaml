@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: educonnect
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn educonnect.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: educonnect.settings
